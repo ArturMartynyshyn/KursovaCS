@@ -17,6 +17,18 @@ public class FigureContainer : IDisposable
             figures.Add(figure);
         }
     }
+    
+    public void RemoveById(int id)
+    {
+        if (id >= 0 && id < figures.Count)
+        {
+            figures.RemoveAt(id);
+        }
+        else
+        {
+            throw new ArgumentOutOfRangeException("id", "Недійсний індекс фігури.");
+        }
+    }
 
     public int Count => figures.Count;
     public Figure this[int index] => figures[index];
@@ -51,27 +63,23 @@ public class FigureContainer : IDisposable
         return maxFigure;
     }
     
-    public void MoveAllFigures(double dx, double dy)
+    public void MoveFigureByIndex(int index, double dx, double dy)
     {
-        for (MyIterator it = Begin(); it != End(); ++it)
+        int i = 0;
+        for (MyIterator it = Begin(); it != End(); ++it, i++)
         {
+            if (i == index) 
             it.Current.Move(dx, dy);
         }
     }
     
-    public void ShowAllFigures()
+    public Figure GetFigure(int index)
     {
-        if (Count == 0)
+        if (index < 0 || index >= figures.Count)
         {
-            Console.WriteLine("Контейнер фігур порожній.");
-            return;
+            throw new ArgumentOutOfRangeException(nameof(index), "Недійсний індекс фігури.");
         }
-
-        int index = 0;
-        for (MyIterator it = Begin(); it != End(); ++it)
-        {
-            Console.WriteLine($"Фігура #{index++}: {it.Current}");
-        }
+        return figures[index];
     }
 
     public void SaveToFile(string filename)

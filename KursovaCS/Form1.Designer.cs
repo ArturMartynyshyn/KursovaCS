@@ -52,13 +52,14 @@ partial class Form1
         areaBtn = new System.Windows.Forms.Button();
         vertOperationsBtn = new System.Windows.Forms.Button();
         moveBtn = new System.Windows.Forms.Button();
+        deleteBtn = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)containerView).BeginInit();
         SuspendLayout();
         // 
         // label1
         // 
-        label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label1.Location = new System.Drawing.Point(22, 13);
+        label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label1.Location = new System.Drawing.Point(6, 13);
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(265, 25);
         label1.TabIndex = 0;
@@ -67,7 +68,7 @@ partial class Form1
         // label2
         // 
         label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label2.Location = new System.Drawing.Point(23, 55);
+        label2.Location = new System.Drawing.Point(68, 55);
         label2.Name = "label2";
         label2.Size = new System.Drawing.Size(90, 25);
         label2.TabIndex = 1;
@@ -76,7 +77,7 @@ partial class Form1
         // label3
         // 
         label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label3.Location = new System.Drawing.Point(22, 125);
+        label3.Location = new System.Drawing.Point(22, 109);
         label3.Name = "label3";
         label3.Size = new System.Drawing.Size(90, 25);
         label3.TabIndex = 2;
@@ -85,7 +86,7 @@ partial class Form1
         // label4
         // 
         label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label4.Location = new System.Drawing.Point(22, 169);
+        label4.Location = new System.Drawing.Point(22, 134);
         label4.Name = "label4";
         label4.Size = new System.Drawing.Size(24, 25);
         label4.TabIndex = 3;
@@ -94,7 +95,7 @@ partial class Form1
         // label5
         // 
         label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label5.Location = new System.Drawing.Point(88, 169);
+        label5.Location = new System.Drawing.Point(88, 134);
         label5.Name = "label5";
         label5.Size = new System.Drawing.Size(24, 25);
         label5.TabIndex = 4;
@@ -102,68 +103,69 @@ partial class Form1
         // 
         // bx1
         // 
-        bx1.Location = new System.Drawing.Point(20, 197);
+        bx1.Location = new System.Drawing.Point(20, 162);
         bx1.Name = "bx1";
         bx1.Size = new System.Drawing.Size(25, 23);
         bx1.TabIndex = 5;
         // 
         // by1
         // 
-        by1.Location = new System.Drawing.Point(87, 197);
+        by1.Location = new System.Drawing.Point(87, 162);
         by1.Name = "by1";
         by1.Size = new System.Drawing.Size(25, 23);
         by1.TabIndex = 6;
         // 
         // bx2
         // 
-        bx2.Location = new System.Drawing.Point(22, 238);
+        bx2.Location = new System.Drawing.Point(22, 203);
         bx2.Name = "bx2";
         bx2.Size = new System.Drawing.Size(25, 23);
         bx2.TabIndex = 7;
         // 
         // by2
         // 
-        by2.Location = new System.Drawing.Point(88, 238);
+        by2.Location = new System.Drawing.Point(88, 203);
         by2.Name = "by2";
         by2.Size = new System.Drawing.Size(25, 23);
         by2.TabIndex = 8;
         // 
         // bx3
         // 
-        bx3.Location = new System.Drawing.Point(22, 286);
+        bx3.Location = new System.Drawing.Point(22, 251);
         bx3.Name = "bx3";
         bx3.Size = new System.Drawing.Size(25, 23);
         bx3.TabIndex = 9;
         // 
         // by3
         // 
-        by3.Location = new System.Drawing.Point(88, 286);
+        by3.Location = new System.Drawing.Point(88, 251);
         by3.Name = "by3";
         by3.Size = new System.Drawing.Size(25, 23);
         by3.TabIndex = 10;
         // 
         // bx4
         // 
-        bx4.Location = new System.Drawing.Point(22, 329);
+        bx4.Location = new System.Drawing.Point(22, 294);
         bx4.Name = "bx4";
         bx4.Size = new System.Drawing.Size(25, 23);
         bx4.TabIndex = 11;
         // 
         // by4
         // 
-        by4.Location = new System.Drawing.Point(88, 329);
+        by4.Location = new System.Drawing.Point(88, 294);
         by4.Name = "by4";
         by4.Size = new System.Drawing.Size(25, 23);
         by4.TabIndex = 12;
         // 
         // addFigure
         // 
-        addFigure.Location = new System.Drawing.Point(6, 358);
+        addFigure.Location = new System.Drawing.Point(6, 323);
         addFigure.Name = "addFigure";
-        addFigure.Size = new System.Drawing.Size(124, 31);
+        addFigure.Size = new System.Drawing.Size(107, 31);
         addFigure.TabIndex = 13;
         addFigure.Text = "Додати фігуру";
         addFigure.UseVisualStyleBackColor = true;
+        addFigure.Click += addFigure_Click;
         // 
         // typeChoose
         // 
@@ -172,23 +174,25 @@ partial class Form1
         typeChoose.Name = "typeChoose";
         typeChoose.Size = new System.Drawing.Size(176, 23);
         typeChoose.TabIndex = 14;
+        typeChoose.SelectedIndexChanged += typeChoose_SelectedIndexChanged;
         // 
         // label6
         // 
         label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label6.Location = new System.Drawing.Point(480, 13);
+        label6.Location = new System.Drawing.Point(434, 13);
         label6.Name = "label6";
         label6.Size = new System.Drawing.Size(126, 25);
         label6.TabIndex = 15;
         label6.Text = "Контейнер";
+        label6.Click += label6_Click;
         // 
         // containerView
         // 
         containerView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         containerView.GridColor = System.Drawing.SystemColors.Info;
-        containerView.Location = new System.Drawing.Point(278, 55);
+        containerView.Location = new System.Drawing.Point(266, 55);
         containerView.Name = "containerView";
-        containerView.Size = new System.Drawing.Size(514, 297);
+        containerView.Size = new System.Drawing.Size(526, 297);
         containerView.TabIndex = 16;
         containerView.Text = "dataGridView1";
         // 
@@ -200,6 +204,7 @@ partial class Form1
         clearBtn.TabIndex = 17;
         clearBtn.Text = "Очистити";
         clearBtn.UseVisualStyleBackColor = true;
+        clearBtn.Click += clearBtn_Click;
         // 
         // readFileBtn
         // 
@@ -209,6 +214,7 @@ partial class Form1
         readFileBtn.TabIndex = 18;
         readFileBtn.Text = "Читання з файлу";
         readFileBtn.UseVisualStyleBackColor = true;
+        readFileBtn.Click += readFileBtn_Click;
         // 
         // writeFileBtn
         // 
@@ -218,15 +224,17 @@ partial class Form1
         writeFileBtn.TabIndex = 19;
         writeFileBtn.Text = "Запис у файл";
         writeFileBtn.UseVisualStyleBackColor = true;
+        writeFileBtn.Click += writeFileBtn_Click;
         // 
         // areaBtn
         // 
-        areaBtn.Location = new System.Drawing.Point(278, 358);
+        areaBtn.Location = new System.Drawing.Point(136, 360);
         areaBtn.Name = "areaBtn";
         areaBtn.Size = new System.Drawing.Size(124, 81);
         areaBtn.TabIndex = 20;
         areaBtn.Text = "Фігура з найбільшою площею";
         areaBtn.UseVisualStyleBackColor = true;
+        areaBtn.Click += areaBtn_Click;
         // 
         // vertOperationsBtn
         // 
@@ -236,21 +244,34 @@ partial class Form1
         vertOperationsBtn.TabIndex = 21;
         vertOperationsBtn.Text = "Операції з веришанми";
         vertOperationsBtn.UseVisualStyleBackColor = true;
+        vertOperationsBtn.Click += vertOperationsBtn_Click;
         // 
         // moveBtn
         // 
-        moveBtn.Location = new System.Drawing.Point(136, 358);
+        moveBtn.Location = new System.Drawing.Point(266, 360);
         moveBtn.Name = "moveBtn";
-        moveBtn.Size = new System.Drawing.Size(124, 81);
+        moveBtn.Size = new System.Drawing.Size(136, 81);
         moveBtn.TabIndex = 22;
         moveBtn.Text = "Переміщення фігур";
         moveBtn.UseVisualStyleBackColor = true;
+        moveBtn.Click += moveBtn_Click;
+        // 
+        // deleteBtn
+        // 
+        deleteBtn.Location = new System.Drawing.Point(6, 360);
+        deleteBtn.Name = "deleteBtn";
+        deleteBtn.Size = new System.Drawing.Size(124, 31);
+        deleteBtn.TabIndex = 23;
+        deleteBtn.Text = "Видалити фігуру";
+        deleteBtn.UseVisualStyleBackColor = true;
+        deleteBtn.Click += deleteBtn_Click;
         // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(deleteBtn);
         Controls.Add(moveBtn);
         Controls.Add(vertOperationsBtn);
         Controls.Add(areaBtn);
@@ -280,6 +301,8 @@ partial class Form1
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button deleteBtn;
 
     private System.Windows.Forms.DataGridView containerView;
     private System.Windows.Forms.Button clearBtn;
